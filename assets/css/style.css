@@ -106,7 +106,7 @@ h2, h3 {
 
 .auth-image {
 	width: 274px;
-	height: 200px;
+	height: 225px;
 	margin-top: 10px;
 	float: left;
 	margin-right: 25px;
@@ -237,79 +237,17 @@ footer {
 
 
 /*Media Queries*/
-
+@media screen and (max-width: 960px) {
+	#respon {
+		float: left;
+		clear: both;
+	}
+}
 
 
 
 
 /*Animation*/
-.animated {
-  animation-duration: 3s;
-  animation-fill-mode: both;
-}
-
-@keyframes flip {
-  from {
-    transform: perspective(400px) rotate3d(0, 1, 0, -360deg);
-    animation-timing-function: ease-out;
-  }
-
-  40% {
-    transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -190deg);
-    animation-timing-function: ease-out;
-  }
-
-  50% {
-    transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -170deg);
-    animation-timing-function: ease-in;
-  }
-
-  80% {
-    transform: perspective(400px) scale3d(.95, .95, .95);
-    animation-timing-function: ease-in;
-  }
-
-  to {
-    transform: perspective(400px);
-    animation-timing-function: ease-in;
-  }
-}
-
-.animated.flip {
-  -webkit-backface-visibility: visible;
-  backface-visibility: visible;
-  animation-name: flip;
-}
-
-@keyframes hinge {
-  0% {
-    transform-origin: top left;
-    animation-timing-function: ease-in-out;
-  }
-
-  20%, 60% {
-    transform: rotate3d(0, 0, 1, 80deg);
-    transform-origin: top left;
-    animation-timing-function: ease-in-out;
-  }
-
-  40%, 80% {
-    transform: rotate3d(0, 0, 1, 60deg);
-    transform-origin: top left;
-    animation-timing-function: ease-in-out;
-    opacity: 1;
-  }
-
-  to {
-    transform: translate3d(0, 700px, 0);
-    opacity: 0;
-  }
-}
-
-.hinge {
-  animation-name: hinge;
-}
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -319,7 +257,6 @@ footer {
     opacity: 1;
   }
 }
-
 .fadeIn {
   animation-name: fadeIn;
 }
@@ -335,7 +272,6 @@ footer {
     transform: none;
   }
 }
-
 .fadeInLeft {
   animation-name: fadeInLeft;
 }
@@ -351,7 +287,67 @@ footer {
     transform: none;
   }
 }
-
 .fadeInRight {
   animation-name: fadeInRight;
+}
+.animated {
+  animation-duration: 3s;
+  animation-fill-mode: both;
+}
+
+@keyframes hingeL {
+  0% {
+    transform-origin: top left;
+    animation-timing-function: ease-in-out;
+  }
+
+  20%, 60% {
+    transform: rotate3d(0, 0, 1, 80deg);
+    transform-origin: top left;
+    animation-timing-function: ease-in-out;
+    opacity: 1;
+  }
+
+  40%, 80% {
+    transform: rotate3d(0, 0, 1, 60deg);
+    transform-origin: top left;
+    animation-timing-function: ease-in-out;
+    opacity: 1;
+  }
+
+  to {
+    transform: translate3d(0, 300px, 0);
+    opacity: 0;
+  }
+}
+.hingeL {
+  animation-name: hingeL;
+}
+
+@keyframes hingeR {
+  0% {
+    transform-origin: top right;
+    animation-timing-function: ease-in-out;
+  }
+
+  20%, 60% {
+    transform: rotate3d(0, 0, 1, -80deg);
+    transform-origin: top right;
+    animation-timing-function: ease-in-out;
+  }
+
+  40%, 80% {
+    transform: rotate3d(0, 0, 1, -60deg);
+    transform-origin: top right;
+    animation-timing-function: ease-in-out;
+    opacity: 1;
+  }
+
+  to {
+    transform: translate3d(0, 400px, 0);
+    opacity: 0;
+  }
+}
+.hingeR {
+  animation-name: hingeR;
 }

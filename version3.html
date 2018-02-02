@@ -20,22 +20,30 @@
 	</header>
 
 	<div class="container" id="main-container">
-		<section class="main-section animated fadeInLeft">
+		<section class="main-section">
 			<h1>HW, Week 3, CSS and Media Queries</h1>
+			<p>Version 3 is the current version!</p>
 		</section>
 
-		<section class="sidebar animated fadeInRight" id="respon">
+		<section class="sidebar" id="respon">
 			<div>
 				<h2>Versions</h2>
 				<p><a href="version1/version1.html">1 - Week 1, Aug 2017</a></p>
 				<p><a href="version2/version2.html">2 - Week 3, Aug 2017</a></p>
-				<p><a href="version3.html">3 - Week 7, Sep 2017</a></p>
+				<p>Current version updated: </p>
+				<span id="time"></span>
+					<script type="text/javascript">
+						document.getElementById("time").innerHTML = new Date().toDateString();
+					</script>
 			</div>
 		</section>
 	</div>
 
+
+
 	<footer>
 		&copy; Copyright 2017 Andalib Kibria
+		<br>Note: "Contact Me" page actually works
 	</footer>
 </body>
 </html>

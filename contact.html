@@ -5,6 +5,8 @@
 	<title>Contact Me</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.16.0/moment.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -32,18 +34,18 @@
 					</span>
 					<span>
 						<label for="email">E-Mail</label>
-						<input type="text" name="email" id="name" placeholder="" required="required">
+						<input type="text" name="email" id="email" placeholder="" required="required">
 					</span>
 					<span>
 						<label for="message">Message</label>
-						<textarea id="message" name="message" required="required"></textarea>
+						<textarea name="message" required="required" id="message"></textarea>
 					</span>
 				</ul>
-				<input type="submit" name="Submit">
+				<input type="submit" name="Submit" id="submit-button">
 			</form>
 		</section>
 
-		<section class="sidebar animated flip">
+		<section class="sidebar animated fadeIn" id="respon">
 			<div id="connect">
 				<h2>Connect with Me</h2>
 				<a href="https://github.com/andalibkibria"><img src="assets/images/github.png" title="Github" class="social"></a>
@@ -54,6 +56,48 @@
 			</div>
 		</section>
 	</div>
+
+	
+	<!-- Javascript Application -->
+    <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+    <script>
+    	var config = {
+    		apiKey: ,
+    		authDomain: ,
+    		databaseURL: ,
+    		projectId
+    	};
+    	firebase.initializeApp(config);
+
+    	var database = firebase.database();
+    	var pageLoadTrigger = false;
+    	var name;
+    	var email;
+    	var message;
+
+
+		$('#submit-button').on('click', function submit() {
+			name = $('#name').val().trim();
+			email = $('#email').val().trim();
+			message = $('#message').val();
+			$('#name, #email, #message').val('');
+		
+			if (name === '' || email === '' || message === '') {
+			alert('Please fill out all fields');
+			} else {
+				database.ref().push({
+					name: name,
+					email: email,
+					message: message
+				});
+			}
+
+			return false;
+		});
+
+
+
+    </script>
 
 
 	<footer>
